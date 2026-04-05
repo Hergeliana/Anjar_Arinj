@@ -161,11 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getCup(rank) {
-    if (rank === 1) return '<span class="cup gold">🏆</span>';
-    if (rank === 2) return '<span class="cup silver">🏆</span>';
-    if (rank === 3) return '<span class="cup bronze">🏆</span>';
-    return '';
-  }
+  if (rank === 1) return '<span class="cup gold">🏆</span>';
+  if (rank === 2) return '<span class="cup silver">🥈</span>';
+  if (rank === 3) return '<span class="cup bronze">🥉</span>';
+  return '';
+}
 
   function getDateOnly(dateStr) {
     const d = new Date(dateStr);
