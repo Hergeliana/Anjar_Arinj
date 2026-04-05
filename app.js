@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function teamName(players) {
-    return [...players].sort((a, b) => a.localeCompare(b)).join(' + ');
+    return [...players].sort((a, b) => a.localeCompare(b)).join(' - ');
   }
 
   function getCup(rank) {
@@ -363,9 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       row.innerHTML = `
         <td>${formatDateTime(game.date)}</td>
-        <td><span class="${aWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamAPlayers.join(' + '))}</span></td>
+        <td><span class="${aWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamAPlayers.join(' - '))}</span></td>
         <td><span class="${aWin ? 'history-win' : 'history-loss'}">${game.teamAScore}</span></td>
-        <td><span class="${bWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamBPlayers.join(' + '))}</span></td>
+        <td><span class="${bWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamBPlayers.join(' - '))}</span></td>
         <td><span class="${bWin ? 'history-win' : 'history-loss'}">${game.teamBScore}</span></td>
         <td><button class="btn danger" data-delete-game="${String(game.id)}">Delete</button></td>
       `;
