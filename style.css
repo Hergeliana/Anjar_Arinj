@@ -18,6 +18,7 @@
 }
 
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
@@ -175,6 +176,7 @@ input:focus, select:focus { border-color: var(--primary-2); }
   border-radius: 14px;
   border: 1px solid transparent;
 }
+
 .message.show { display: block; }
 .message.error { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.4); color: #fecaca; }
 .message.success { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.4); color: #bbf7d0; }
@@ -217,6 +219,7 @@ td { color: #e5e7eb; }
 
 .table-wrap {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: rgba(2,6,23,0.3);
@@ -233,6 +236,7 @@ td { color: #e5e7eb; }
   font-weight: 700;
   padding: 0 9px;
 }
+
 .badge.win { background: rgba(16,185,129,0.15); color: #bbf7d0; }
 .badge.loss { background: rgba(239,68,68,0.15); color: #fecaca; }
 
@@ -257,6 +261,7 @@ td { color: #e5e7eb; }
   padding: 16px;
   z-index: 30;
 }
+
 .modal.show { display: flex; }
 
 .modal-card {
@@ -322,4 +327,171 @@ td { color: #e5e7eb; }
   .col-6, .col-4, .col-3, .col-8 { grid-column: span 12; }
   .teams { grid-template-columns: 1fr; }
   .hero { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 16px);
+    margin: 14px auto 24px;
+  }
+
+  .hero {
+    gap: 12px;
+    margin-bottom: 14px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .panel {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .modal-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .nav, .subnav {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .toolbar,
+  .filters {
+    gap: 8px;
+  }
+
+  .mini-field {
+    min-width: 100%;
+  }
+
+  .score-box {
+    font-size: 30px;
+    padding: 8px;
+    border-radius: 14px;
+  }
+
+  table {
+    min-width: 680px;
+  }
+
+  th, td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: calc(100% - 12px);
+    margin: 10px auto 18px;
+  }
+
+  .hero {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 13px;
+  }
+
+  .panel,
+  .card {
+    padding: 12px;
+  }
+
+  .modal {
+    padding: 10px;
+  }
+
+  .modal-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .grid,
+  .teams {
+    gap: 12px;
+  }
+
+  .nav,
+  .subnav,
+  .toolbar,
+  .filters {
+    gap: 8px;
+  }
+
+  .btn,
+  button,
+  input,
+  select {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  label,
+  th {
+    font-size: 13px;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  input,
+  select {
+    padding: 11px 12px;
+  }
+
+  .score-box {
+    font-size: 24px;
+    padding: 8px;
+  }
+
+  .team-header {
+    gap: 8px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .player-row {
+    padding: 10px;
+  }
+
+  .empty {
+    padding: 22px 10px;
+    font-size: 14px;
+  }
+
+  table {
+    min-width: 620px;
+  }
+
+  .history-win,
+  .history-loss {
+    width: calc(100% + 16px);
+    margin: -10px -8px;
+    padding: 10px 8px;
+  }
 }
