@@ -601,8 +601,15 @@ td { color: #e5e7eb; }
 .mobile-title-row {
   display: flex;
   align-items: center;
-  gap: 14px;
-  min-width: 0;
+  gap: 10px;
+  width: 100%;
+}
+
+.mobile-title-row h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  padding-right: 24px;
 }
 
 .entry-actions {
@@ -932,6 +939,6 @@ td { color: #e5e7eb; }
     font-size: 24px;
     line-height: 1;
     display: block;
-    margin-left: -6px;
+    margin-left:-3px;
   }
 }
