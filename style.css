@@ -944,20 +944,23 @@ td { color: #e5e7eb; }
   }
 
   .menu-toggle {
-    position: static;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    color: var(--text);
-    font-size: 24px;
-    line-height: 1;
-  }
+  display: flex !important;
+  position: static;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+  top: auto;
+  left: auto;
 }
