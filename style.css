@@ -807,17 +807,16 @@ td { color: #e5e7eb; }
     font-size: 12px;
   }
 
-.toolbar {
-  gap: 8px;
-}
+  .toolbar {
+    gap: 8px;
+  }
 
-.filters {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  align-items: end;
-  width: 100%;
-}
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 6px;
+    align-items: end;
+  }
 
   .mini-field label {
     font-size: 10px;
@@ -830,15 +829,13 @@ td { color: #e5e7eb; }
     font-size: 11px;
   }
 
-#clearHistoryDatesBtn,
-#clearRankingDatesBtn {
-  grid-column: 1 / -1;
-  width: 100%;
-  min-height: 34px;
-  padding: 6px 8px;
-  font-size: 11px;
-  white-space: nowrap;
-}
+  #clearHistoryDatesBtn,
+  #clearRankingDatesBtn {
+    min-height: 34px;
+    padding: 6px 8px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
 
   .table-wrap {
     overflow-x: auto;
