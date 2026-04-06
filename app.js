@@ -355,6 +355,18 @@ function getCup(rank) {
     await loadAllData();
   }
 
+function setDefaultYearDateFilters() {
+  const currentYear = new Date().getFullYear();
+  const startOfYear = `${currentYear}-01-01`;
+  const endOfYear = `${currentYear}-12-31`;
+
+  if (els.historyFrom && !els.historyFrom.value) els.historyFrom.value = startOfYear;
+  if (els.historyTo && !els.historyTo.value) els.historyTo.value = endOfYear;
+
+  if (els.rankingFrom && !els.rankingFrom.value) els.rankingFrom.value = startOfYear;
+  if (els.rankingTo && !els.rankingTo.value) els.rankingTo.value = endOfYear;
+}
+
   function renderHistory() {
     if (!els.historyBody || !els.historyEmpty) return;
 
@@ -492,12 +504,13 @@ function getCup(rank) {
     });
   }
 
-  function renderAllData() {
-    renderSelectOptions();
-    renderPlayers();
-    renderHistory();
-    renderRanking();
-  }
+function renderAllData() {
+  renderSelectOptions();
+  renderPlayers();
+  setDefaultYearDateFilters();
+  renderHistory();
+  renderRanking();
+}
 
   els.mainTabs.forEach((btn) => {
     btn.addEventListener('click', () => setMainTab(btn.dataset.mainTab));
@@ -657,20 +670,22 @@ if (els.managePlayersSidebarBtn) {
   });
 
   if (els.clearHistoryDatesBtn) {
-    els.clearHistoryDatesBtn.addEventListener('click', () => {
-      if (els.historyFrom) els.historyFrom.value = '';
-      if (els.historyTo) els.historyTo.value = '';
-      renderHistory();
-    });
-  }
+  els.clearHistoryDatesBtn.addEventListener('click', () => {
+    const currentYear = new Date().getFullYear();
+    if (els.historyFrom) els.historyFrom.value = `${currentYear}-01-01`;
+    if (els.historyTo) els.historyTo.value = `${currentYear}-12-31`;
+    renderHistory();
+  });
+}
 
-  if (els.clearRankingDatesBtn) {
-    els.clearRankingDatesBtn.addEventListener('click', () => {
-      if (els.rankingFrom) els.rankingFrom.value = '';
-      if (els.rankingTo) els.rankingTo.value = '';
-      renderRanking();
-    });
-  }
+ if (els.clearRankingDatesBtn) {
+  els.clearRankingDatesBtn.addEventListener('click', () => {
+    const currentYear = new Date().getFullYear();
+    if (els.rankingFrom) els.rankingFrom.value = `${currentYear}-01-01`;
+    if (els.rankingTo) els.rankingTo.value = `${currentYear}-12-31`;
+    renderRanking();
+  });
+}
 
 function closeSidebar() {
   if (window.innerWidth > 768) return;
