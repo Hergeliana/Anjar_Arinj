@@ -712,3 +712,185 @@ td { color: #e5e7eb; }
     padding: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero.mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0f172a;
+    padding: 10px 14px 10px 62px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero.mobile-header h1 {
+    font-size: 18px;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .menu-toggle {
+    top: 10px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .field {
+    margin-bottom: 6px;
+    gap: 4px;
+  }
+
+  label {
+    font-size: 11px;
+  }
+
+  input,
+  select {
+    min-height: 36px;
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .score-box {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+
+  .entry-actions {
+    margin-top: 10px;
+  }
+
+  .entry-actions .btn {
+    min-height: 38px;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .toolbar {
+    gap: 8px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 6px;
+    align-items: end;
+  }
+
+  .mini-field label {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+
+  .mini-field input {
+    min-height: 34px;
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  #clearHistoryDatesBtn,
+  #clearRankingDatesBtn {
+    min-height: 34px;
+    padding: 6px 8px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  #rank-personal,
+  #rank-team {
+    overflow-x: hidden;
+  }
+
+  #rank-personal table,
+  #rank-team table {
+    min-width: 560px;
+  }
+
+  .player-row .btn.danger {
+    min-width: 68px;
+    width: 68px;
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .modal-card {
+    padding: 14px;
+  }
+}
+
+.ranking-tabs {
+  margin-top: 14px;
+}
+
+#rank-personal table,
+#rank-team table {
+  width: 100%;
+  min-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #rank-personal table,
+  #rank-team table {
+    min-width: 560px;
+  }
+
+  .ranking-toolbar {
+    gap: 8px;
+  }
+
+  .ranking-tabs {
+    margin-top: 10px;
+  }
+}
+
+.ranking-toolbar {
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.ranking-subnav {
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+#tab-ranking .filters {
+  margin-left: auto;
+}
+
+#tab-ranking .table-wrap {
+  width: 100%;
+}
+
+#rank-personal table,
+#rank-team table {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ranking-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #tab-ranking .filters {
+    margin-left: 0;
+  }
+
+  .ranking-subnav {
+    width: 100%;
+  }
+}
