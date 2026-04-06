@@ -894,3 +894,13 @@ td { color: #e5e7eb; }
     width: 100%;
   }
 }
+
+.hero.mobile-header {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  top: 50%;
+  transform: translateY(-50%);
+}
