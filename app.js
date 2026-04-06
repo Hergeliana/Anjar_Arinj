@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
     personalBody: document.getElementById('personalBody'),
     personalEmpty: document.getElementById('personalEmpty'),
     teamBody: document.getElementById('teamBody'),
-    teamEmpty: document.getElementById('teamEmpty')
+    teamEmpty: document.getElementById('teamEmpty'),
+managePlayersSidebarBtn: document.getElementById('managePlayersSidebarBtn'),
   };
 
   async function fetchPlayers() {
@@ -506,6 +507,17 @@ function getCup(rank) {
     });
   }
 
+if (els.managePlayersSidebarBtn) {
+  els.managePlayersSidebarBtn.addEventListener('click', () => {
+    if (els.managePlayersBtn) els.managePlayersBtn.click();
+
+    if (window.innerWidth <= 768) {
+      if (els.nav) els.nav.classList.remove('show');
+      if (els.sidebarOverlay) els.sidebarOverlay.classList.remove('show');
+    }
+  });
+}
+
   if (els.closePlayerModalBtn) {
     els.closePlayerModalBtn.addEventListener('click', () => {
       if (els.playerModal) els.playerModal.classList.remove('show');
@@ -652,6 +664,42 @@ function getCup(rank) {
       renderRanking();
     });
   }
+
+function closeSidebar() {
+  if (window.innerWidth > 768) return;
+
+  if (els.nav) els.nav.classList.remove('show');
+  if (els.sidebarOverlay) els.sidebarOverlay.classList.remove('show');
+}
+
+function toggleSidebar() {
+  if (!els.nav || !els.sidebarOverlay) return;
+
+  els.nav.classList.toggle('show');
+  els.sidebarOverlay.classList.toggle('show');
+}
+
+if (els.menuToggle) {
+  els.menuToggle.addEventListener('click', toggleSidebar);
+}
+
+if (els.sidebarOverlay) {
+  els.sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
+els.mainTabs.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.mainTab) setMainTab(btn.dataset.mainTab);
+    closeSidebar();
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    if (els.nav) els.nav.classList.remove('show');
+    if (els.sidebarOverlay) els.sidebarOverlay.classList.remove('show');
+  }
+});
 
   loadAllData().catch((error) => {
     console.error('Application startup error:', error);
