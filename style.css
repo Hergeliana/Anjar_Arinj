@@ -597,3 +597,118 @@ td { color: #e5e7eb; }
     overflow: visible;
   }
 }
+
+.mobile-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.entry-actions .btn:first-child {
+  flex: 1;
+}
+
+.entry-actions .btn.success {
+  flex: 3;
+}
+
+@media (max-width: 768px) {
+  .hero.mobile-header {
+    padding-left: 68px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero.mobile-header h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .nav .btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    align-items: end;
+  }
+
+  .mini-field {
+    min-width: 0;
+  }
+
+  .mini-field label {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .mini-field input {
+    padding: 8px 10px;
+    font-size: 12px;
+    min-height: 38px;
+  }
+
+  #clearHistoryDatesBtn,
+  #clearRankingDatesBtn {
+    min-height: 38px;
+    padding: 8px 10px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .teams {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .field {
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  label {
+    font-size: 12px;
+  }
+
+  input,
+  select {
+    padding: 9px 10px;
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .score-box {
+    font-size: 20px;
+    padding: 6px 10px;
+  }
+
+  .entry-actions {
+    margin-top: 12px;
+  }
+
+  .entry-actions .btn {
+    min-height: 42px;
+    padding: 10px;
+  }
+}
