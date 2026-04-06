@@ -860,6 +860,22 @@ td { color: #e5e7eb; }
     padding: 14px;
   }
 }
+#tab-players .panel {
+  max-height: calc(100vh - 140px);
+  overflow: hidden;
+}
+
+#tab-players .card {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 180px);
+}
+
+#tab-players .player-list {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
 
 .ranking-tabs {
   margin-top: 14px;
@@ -979,4 +995,13 @@ td { color: #e5e7eb; }
   box-shadow: none;
   top: auto;
   left: auto;
+}
+
+#tab-players .panel {
+  max-height: calc(100vh - 90px);
+}
+
+#tab-players .card {
+  max-height: calc(100vh - 120px);
+}
 }
