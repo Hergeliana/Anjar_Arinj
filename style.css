@@ -321,6 +321,18 @@ td { color: #e5e7eb; }
   padding: 12px 10px;
 }
 
+#personalTable,
+#teamTable {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#personalTable th:nth-child(2),
+#personalTable td:nth-child(2),
+#teamTable th:nth-child(2),
+#teamTable td:nth-child(2) {
+  text-align: left;
+}
 .hidden { display: none !important; }
 
 @media (max-width: 900px) {
@@ -493,5 +505,95 @@ td { color: #e5e7eb; }
     width: calc(100% + 16px);
     margin: -10px -8px;
     padding: 10px 8px;
+  }
+}
+
+.menu-toggle {
+  display: none !important;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex !important;
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 1001;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.95);
+    color: var(--text);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 70px 14px 18px;
+    background: rgba(15, 23, 42, 0.98);
+    border-right: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    margin-bottom: 0;
+  }
+
+  .nav.show {
+    transform: translateX(0);
+  }
+
+  .nav .btn {
+    width: 100%;
+    text-align: left;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.55);
+    z-index: 999;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .sidebar-overlay {
+    display: none !important;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none !important;
+    background: transparent;
+    border-right: none;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
   }
 }
