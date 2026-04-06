@@ -900,7 +900,39 @@ td { color: #e5e7eb; }
   align-items: center;
 }
 
+.hero.mobile-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  min-height: 52px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero.mobile-header h1 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
 .menu-toggle {
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  transform: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  min-width: auto;
+  top: auto;
+  left: auto;
+}
+
+.menu-toggle:hover {
+  background: transparent;
 }
