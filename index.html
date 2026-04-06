@@ -21,7 +21,7 @@
   <button class="btn active" data-main-tab="entry">Score Entry</button>
   <button class="btn" data-main-tab="history">History</button>
   <button class="btn" data-main-tab="ranking">Ranking</button>
-  <button class="btn" id="managePlayersSidebarBtn">Manage Players</button>
+  <button class="btn" data-main-tab="players">Manage Players</button>
 </div>
 
 <button class="hidden" id="managePlayersBtn">Manage Players</button>
@@ -198,13 +198,13 @@
     </section>
   </div>
 
-  <div class="modal" id="playerModal">
-    <div class="modal-card">
-      <div class="modal-head">
-	<div>
-  	   <h3 style="margin:0;">Manage Players</h3>
-	</div>
-        <button class="btn ghost" id="closePlayerModalBtn">Close</button>
+<section class="main-tab hidden" id="tab-players">
+  <div class="panel" style="max-width: 1200px; margin: 0 auto;">
+    <div class="card">
+      <div class="toolbar">
+        <div>
+          <h3 style="margin:0;">Manage Players</h3>
+        </div>
       </div>
 
       <div class="field">
@@ -219,6 +219,7 @@
       <div class="player-list" id="playerList"></div>
     </div>
   </div>
+</section>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
