@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return [...players].sort((a, b) => a.localeCompare(b)).join(' - ');
   }
 
-  function getCup(rank) {
+function getCup(rank) {
   if (rank === 1) return '<span class="cup gold">🏆</span>';
   if (rank === 2) return '<span class="cup silver">🥈</span>';
   if (rank === 3) return '<span class="cup bronze">🥉</span>';
@@ -656,5 +656,41 @@ document.addEventListener('DOMContentLoaded', () => {
   loadAllData().catch((error) => {
     console.error('Application startup error:', error);
     alert('Could not load data. Check Supabase tables, RLS policies, and internet connection.');
+  });
+});
+
+// your existing code above ...
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('.nav');
+  const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+  if (!menuToggle || !nav || !sidebarOverlay) return;
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    sidebarOverlay.classList.toggle('show');
+  });
+
+  sidebarOverlay.addEventListener('click', () => {
+    nav.classList.remove('show');
+    sidebarOverlay.classList.remove('show');
+  });
+
+  document.querySelectorAll('.nav .btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        nav.classList.remove('show');
+        sidebarOverlay.classList.remove('show');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      nav.classList.remove('show');
+      sidebarOverlay.classList.remove('show');
+    }
   });
 });
