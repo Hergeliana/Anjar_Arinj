@@ -939,6 +939,8 @@ td { color: #e5e7eb; }
     font-size: 24px;
     line-height: 1;
     display: block;
-    margin-left:-2px;
   }
+}
+.menu-toggle {
+  margin-left: -2px;
 }
