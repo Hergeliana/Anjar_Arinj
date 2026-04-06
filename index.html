@@ -30,9 +30,8 @@
         <div class="col-12 card">
           <div class="toolbar">
             <div>
-              <h3 style="margin:0 0 4px;">New Game</h3>
-              <div class="hint">Select 4 different players and enter the final scores.</div>
-            </div>
+  		<h3 style="margin:0;">New Game</h3>
+	    </div>
             <button class="btn" id="resetSelectionBtn">Clear Selection</button>
           </div>
 
@@ -117,12 +116,12 @@
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Team A</th>
-              <th>Score</th>
-              <th>Team B</th>
-              <th>Score</th>
-              <th>Delete</th>
+		<th>Team A</th>
+		<th>Score</th>
+		<th>Team B</th>
+		<th>Score</th>
+		<th>Date & Time</th>
+		<th>Delete</th>
             </tr>
           </thead>
           <tbody id="historyBody"></tbody>
@@ -133,32 +132,31 @@
     </section>
 
     <section class="panel main-tab hidden" id="tab-ranking">
-      <div class="subnav">
-        <button class="btn active" data-rank-tab="personal">Personal Ranking</button>
-        <button class="btn" data-rank-tab="team">Team Ranking</button>
-      </div>
 
-      <div class="toolbar">
-        <div>
 <div>
-  <h3 style="margin:0;">Rankings</h3>
+  <h3 style="margin:0 0 10px;">Rankings</h3>
 </div>
 
-        <div class="filters">
-          <div class="mini-field">
-            <label for="rankingFrom">From Date</label>
-            <input type="date" id="rankingFrom" />
-          </div>
+<div class="toolbar ranking-toolbar">
+  <div class="subnav ranking-subnav">
+    <button class="btn active" data-rank-tab="personal">Personal Ranking</button>
+    <button class="btn" data-rank-tab="team">Team Ranking</button>
+  </div>
 
-          <div class="mini-field">
-            <label for="rankingTo">To Date</label>
-            <input type="date" id="rankingTo" />
-          </div>
+  <div class="filters">
+    <div class="mini-field">
+      <label for="rankingFrom">From Date</label>
+      <input type="date" id="rankingFrom" />
+    </div>
 
-          <button class="btn" id="clearRankingDatesBtn">Clear Dates</button>
-        </div>
-      </div>
+    <div class="mini-field">
+      <label for="rankingTo">To Date</label>
+      <input type="date" id="rankingTo" />
+    </div>
 
+    <button class="btn" id="clearRankingDatesBtn">Clear Dates</button>
+  </div>
+</div>
       <div id="rank-personal" class="rank-tab">
         <div class="table-wrap">
           <table>
@@ -202,10 +200,9 @@
   <div class="modal" id="playerModal">
     <div class="modal-card">
       <div class="modal-head">
-        <div>
-          <h3 style="margin:0;">Manage Players</h3>
-          <div class="hint">Add players once. They stay saved until you delete them.</div>
-        </div>
+	<div>
+  	   <h3 style="margin:0;">Manage Players</h3>
+	</div>
         <button class="btn ghost" id="closePlayerModalBtn">Close</button>
       </div>
 
