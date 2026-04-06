@@ -154,7 +154,15 @@ managePlayersSidebarBtn: document.getElementById('managePlayersSidebarBtn'),
 
   function formatDateTime(dateStr) {
     const d = new Date(dateStr);
-    return isNaN(d.getTime()) ? '' : d.toLocaleString();
+    return isNaN(d.getTime())
+  ? ''
+  : d.toLocaleString([], {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
   }
 
   function teamName(players) {
@@ -363,12 +371,12 @@ function getCup(rank) {
       const bWin = game.winner === 'B';
 
       row.innerHTML = `
-        <td>${formatDateTime(game.date)}</td>
-        <td><span class="${aWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamAPlayers.join(' - '))}</span></td>
-        <td><span class="${aWin ? 'history-win' : 'history-loss'}">${game.teamAScore}</span></td>
-        <td><span class="${bWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamBPlayers.join(' - '))}</span></td>
-        <td><span class="${bWin ? 'history-win' : 'history-loss'}">${game.teamBScore}</span></td>
-        <td><button class="btn danger" data-delete-game="${String(game.id)}">Delete</button></td>
+	<td><span class="${aWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamAPlayers.join(' - '))}</span></td>
+	<td><span class="${aWin ? 'history-win' : 'history-loss'}">${game.teamAScore}</span></td>
+	<td><span class="${bWin ? 'history-win' : 'history-loss'}">${escapeHtml(game.teamBPlayers.join(' - '))}</span></td>
+	<td><span class="${bWin ? 'history-win' : 'history-loss'}">${game.teamBScore}</span></td>
+	<td>${formatDateTime(game.date)}</td>
+	<td><button class="btn danger" data-delete-game="${String(game.id)}">Delete</button></td>
       `;
 
       els.historyBody.appendChild(row);
@@ -503,7 +511,6 @@ function getCup(rank) {
     els.managePlayersBtn.addEventListener('click', () => {
       clearMessage(els.playerMessage);
       if (els.playerModal) els.playerModal.classList.add('show');
-      if (els.newPlayerName) els.newPlayerName.focus();
     });
   }
 
